@@ -1,9 +1,5 @@
-//
-//  AppDelegate.swift
-//  AutoNewsFeed
-//
-//  Created by Artem Golovanev on 04/11/2026.
-//
+// AppDelegate.swift
+// By Artem Golovanev
 
 import UIKit
 

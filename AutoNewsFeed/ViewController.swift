@@ -1,19 +1,13 @@
-//
-//  ViewController.swift
-//  AutoNewsFeed
-//
-//  Created by Artem Golovanev on 04/11/2026.
-//
+// ViewController.swift
+// By Artem Golovanev
 
-import UIKit
+import Combine
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
+protocol ViewController: AnyObject {
+    associatedtype View: ContentView
+    associatedtype Model: ViewModel
+    where View.State == Model.State, View.Action == Model.Input
+    
+    var contentView: View { get }
+    var viewModel: Model { get }
 }
-
