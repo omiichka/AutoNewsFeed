@@ -11,7 +11,7 @@
     ],
   },
   "files": [
-    { "path": "<PROJECT>/../Package" },
+    { "path": "<PROJECT>/Package" },
     {
       "kind": "folder",
       "path": "AutoNewsFeed",
