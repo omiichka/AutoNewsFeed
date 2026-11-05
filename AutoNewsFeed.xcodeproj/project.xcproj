@@ -45,6 +45,13 @@
         "frameworks",
         "resources",
       ],
+      "package-product-members": [
+        { "product-name": "Core", "build-phase": { "build-phase": "frameworks" } },
+        { "product-name": "Design", "build-phase": { "build-phase": "frameworks" } },
+        { "product-name": "Network", "build-phase": { "build-phase": "frameworks" } },
+        { "product-name": "NewsFeed", "build-phase": { "build-phase": "frameworks" } },
+        { "product-name": "NewsDetail", "build-phase": { "build-phase": "frameworks" } },
+      ],
       "build-settings": {
         "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon",
         "ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME": "AccentColor",
@@ -54,7 +61,6 @@
         "INFOPLIST_FILE": "AutoNewsFeed/Info.plist",
         "INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents": "YES",
         "INFOPLIST_KEY_UILaunchStoryboardName": "LaunchScreen",
-        "INFOPLIST_KEY_UIMainStoryboardFile": "Main",
         "INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad": "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight",
         "INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone": "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight",
         "LD_RUNPATH_SEARCH_PATHS": [
