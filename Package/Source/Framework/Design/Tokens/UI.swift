@@ -26,8 +26,9 @@ public extension UI {
         case sun
         case moon
         case newspaper
+        case warning
         
-        var image: UIImage? {
+        public var image: UIImage? {
             UIImage(systemName: self.name)
         }
     }
@@ -44,6 +45,8 @@ private extension UI.Icon {
                 "moon"
             case .newspaper:
                 "newspaper"
+            case .warning:
+                "exclamationmark.triangle"
         }
     }
 }

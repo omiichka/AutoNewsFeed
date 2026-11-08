@@ -4,10 +4,8 @@
 import Combine
 
 @MainActor
-public protocol ViewModel: AnyObject {
-    associatedtype State
+public protocol ViewModel: Observable {
     associatedtype Input
-    
-    var publisher: AnyPublisher<State, Never> { get }
+
     func send(_ input: Input)
 }

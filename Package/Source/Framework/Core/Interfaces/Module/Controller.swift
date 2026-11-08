@@ -8,7 +8,7 @@ import Foundation
 public protocol Controller: AnyObject {
     associatedtype View: ContentView
     associatedtype Model: ViewModel
-    where View.Adapter.State == Model.State, View.Adapter.Action == Model.Input
+    where View.Adapter.State == Model.Item, View.Adapter.Item == Model.Input
     
     var contentView: View { get }
     var viewModel: Model { get }
@@ -25,7 +25,7 @@ public extension Controller {
                 },
             contentView
                 .adapter
-                .actionPublisher
+                .publisher
                 .sink { [viewModel] in
                     viewModel.send($0)
                 }

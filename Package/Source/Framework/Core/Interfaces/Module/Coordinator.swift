@@ -6,5 +6,6 @@ import UIKit
 @MainActor
 public protocol Coordinator: Buildable {
     var navigationController: UINavigationController { get }
+
     func start()
 }

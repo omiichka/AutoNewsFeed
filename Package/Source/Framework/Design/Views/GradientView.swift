@@ -21,6 +21,5 @@ private extension GradientView {
         isUserInteractionEnabled = false
         guard let gradient = layer as? CAGradientLayer else { return }
         gradient.colors = [UI.Color.gradientStart.color.cgColor, UI.Color.gradientEnd.color.cgColor]
-        gradient.locations = [0, 1]
     }
 }
