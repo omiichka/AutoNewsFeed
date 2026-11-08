@@ -3,7 +3,6 @@
 
 import Foundation
 
-/// Every user-facing string of the app, from the single `Localizable.xcstrings`.
 public enum Strings {
     public static var feedTitle: String { String(localized: "feed.title", bundle: .module) }
     public static var retry: String { String(localized: "retry", bundle: .module) }

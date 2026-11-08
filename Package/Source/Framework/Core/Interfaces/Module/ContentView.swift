@@ -1,11 +1,11 @@
 // ContentView.swift
 // By Artem Golovanev
 
-import UIKit
+import Foundation
 
 @MainActor
 public protocol ContentView: AnyObject {
     associatedtype Adapter: ViewAdapter
-
+    
     var adapter: Adapter { get }
 }

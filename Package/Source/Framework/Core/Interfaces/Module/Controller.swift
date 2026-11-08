@@ -9,7 +9,7 @@ public protocol Controller: AnyObject {
     associatedtype View: ContentView
     associatedtype Model: ViewModel
     where View.Adapter.State == Model.State, View.Adapter.Action == Model.Input
-
+    
     var contentView: View { get }
     var viewModel: Model { get }
 }
