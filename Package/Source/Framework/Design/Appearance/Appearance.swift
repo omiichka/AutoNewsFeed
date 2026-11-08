@@ -8,28 +8,28 @@ public enum Appearance: String, CaseIterable {
     case system
     case light
     case dark
-
+    
     public var title: String {
         switch self {
-        case .system: Strings.appearanceSystem
-        case .light: Strings.appearanceLight
-        case .dark: Strings.appearanceDark
+            case .system: Strings.appearanceSystem
+            case .light: Strings.appearanceLight
+            case .dark: Strings.appearanceDark
         }
     }
-
+    
     public var image: UIImage? {
         switch self {
-        case .system: SystemIcon.circle.image
-        case .light: SystemIcon.sun.image
-        case .dark: SystemIcon.moon.image
+            case .system: UI.Icon.circle.image
+            case .light: UI.Icon.sun.image
+            case .dark: UI.Icon.moon.image
         }
     }
-
+    
     public var style: UIUserInterfaceStyle {
         switch self {
-        case .system: .unspecified
-        case .light: .light
-        case .dark: .dark
+            case .system: .unspecified
+            case .light: .light
+            case .dark: .dark
         }
     }
 }
