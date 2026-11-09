@@ -1,4 +1,4 @@
-// PlaceholderImageView.swift
+// ImageView.swift
 // By Artem Golovanev
 
 import Core
@@ -26,7 +26,7 @@ private extension ImageView {
     func setupUI() {
         backgroundColor = UI.Color.imageBackground.color
         clipsToBounds = true
-        tintColor = UI.Color.placeholder.color
+        tintColor = UI.Color.secondaryText.color
         preferredSymbolConfiguration = UIImage.SymbolConfiguration(textStyle: .largeTitle)
         update(with: nil)
     }

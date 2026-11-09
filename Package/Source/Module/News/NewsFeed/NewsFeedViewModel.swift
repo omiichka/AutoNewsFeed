@@ -77,10 +77,7 @@ private extension NewsFeedViewModel {
     func didLoad(_ result: NewsPage, page: Int) {
         loadTask = nil
         var newState = subject.value
-        if page == Constants.firstPage {
-            newState.items = []
-        }
-        // The feed shifts between page requests, so an article can come again: keep only new ones.
+        if page == Constants.firstPage { newState.items = [] }
         var known = Set(newState.items)
         let fresh = result.items.filter { known.insert($0).inserted }
         newState.items += fresh

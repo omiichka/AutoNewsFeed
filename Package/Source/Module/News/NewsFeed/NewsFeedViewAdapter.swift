@@ -106,7 +106,7 @@ private extension NewsFeedViewAdapter {
 
 private extension NewsFeedViewAdapter {
     func makeDataSource(for view: UICollectionView) -> DataSource {
-        let cell = UICollectionView.CellRegistration<NewsCell, NewsCell.Item> { cell, _, item in
+        let cell = UICollectionView.CellRegistration<NewsFeedCell, NewsFeedCell.Item> { cell, _, item in
             cell.update(with: item)
         }
         

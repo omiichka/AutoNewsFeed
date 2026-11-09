@@ -7,7 +7,6 @@ import UIKit
 
 private enum Constants {
     static let minCardWidth: CGFloat = 280
-    static let footerHeight: CGFloat = 96
 }
 
 final class NewsFeedView: UIView, ContentView {
@@ -33,10 +32,10 @@ private extension NewsFeedView {
         collectionView.backgroundColor = UI.Color.background.color
         collectionView.refreshControl = UIRefreshControl()
         collectionView.collectionViewLayout = compositionalLayout
+        addSubview(collectionView)
     }
 
     func layout() {
-        addSubview(collectionView)
         mapConstraint(for: collectionView)
     }
 }
@@ -50,7 +49,7 @@ private extension NewsFeedView {
             let width = contentWidth(in: environment, padding: padding)
             let columns = columnCount(for: width)
             let cardWidth = (width - UI.Space.m.rawValue * CGFloat(columns - 1)) / CGFloat(columns)
-            let cardHeight = NewsCell.height(forWidth: cardWidth, traits: traits)
+            let cardHeight = NewsFeedCell.height(forWidth: cardWidth, traits: traits)
             let layoutGroup = group(count: columns, width: cardWidth, height: cardHeight)
             let section = NSCollectionLayoutSection(group: layoutGroup)
             section.interGroupSpacing = UI.Space.m.rawValue
@@ -90,7 +89,7 @@ private extension NewsFeedView {
     }
 
     var footer: NSCollectionLayoutBoundarySupplementaryItem {
-        let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(Constants.footerHeight))
+        let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(UI.Space.l.rawValue))
         let elementKind = UICollectionView.elementKindSectionFooter
         return NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: layoutSize,

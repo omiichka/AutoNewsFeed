@@ -34,7 +34,8 @@ private extension LoaderView {
     func layout() {
         NSLayoutConstraint.activate([
             activityView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            activityView.centerYAnchor.constraint(equalTo: centerYAnchor)
+            activityView.topAnchor.constraint(equalTo: topAnchor, constant: UI.Space.m.rawValue),
+            activityView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -UI.Space.m.rawValue)
         ])
     }
 }

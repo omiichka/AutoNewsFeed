@@ -6,6 +6,10 @@ import UIKit
 public struct UI {}
 
 public extension UI {
+    enum Ratio: CGFloat {
+        case photo = 1.5
+    }
+    
     enum Radius: CGFloat {
         case card = 18
     }
@@ -53,7 +57,9 @@ private extension UI.Icon {
 
 public extension UI {
     enum Typography {
+        case title
         case headline
+        case body
         case subheadline
         case caption
         
@@ -69,8 +75,12 @@ public extension UI {
 extension UI.Typography {
     private var style: UIFont.TextStyle {
         switch self {
+            case .title:
+                    .title1
             case .headline:
                     .headline
+            case .body:
+                    .body
             case .subheadline:
                     .subheadline
             case .caption:
@@ -84,21 +94,21 @@ public extension UI {
         case background
         case cardBackground
         case imageBackground
+        case text
         case secondaryText
-        case placeholder
-
+        
         public var color: UIColor {
             switch self {
                 case .background:
-                    .systemGroupedBackground
+                        .systemGroupedBackground
                 case .cardBackground:
-                    .secondarySystemGroupedBackground
+                        .secondarySystemGroupedBackground
                 case .imageBackground:
-                    .tertiarySystemFill
+                        .tertiarySystemFill
+                case .text:
+                        .label
                 case .secondaryText:
-                    .secondaryLabel
-                case .placeholder:
-                    .tertiaryLabel
+                        .secondaryLabel
             }
         }
     }
