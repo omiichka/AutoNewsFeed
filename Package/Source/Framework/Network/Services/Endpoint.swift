@@ -9,6 +9,7 @@ private enum Constants {
 
 enum Endpoint {
     case news(page: Int, count: Int)
+    case article(path: String)
 
     var url: URL {
         Constants.baseURL.appending(path: path)
@@ -20,6 +21,8 @@ private extension Endpoint {
         switch self {
             case let .news(page, count):
                 "news/\(page)/\(count)"
+            case let .article(path):
+                "news/item/" + path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
         }
     }
 }

@@ -13,6 +13,7 @@ final class AppCoordinator {
     private let service: any NewsFetching
     private let imageLoader: any ImageLoading
     private let appearanceStore: AppearanceStore
+    private let parser: any ArticleParsing
     private var bag = Set<AnyCancellable>()
     
     private lazy var builder: NewsFeedBuilder = {
@@ -27,12 +28,14 @@ final class AppCoordinator {
         navigationController: UINavigationController = .init(),
         service: any NewsFetching,
         imageLoader: any ImageLoading,
-        appearanceStore: AppearanceStore
+        appearanceStore: AppearanceStore,
+        parser: any ArticleParsing
     ) {
         self.navigationController = navigationController
         self.service = service
         self.imageLoader = imageLoader
         self.appearanceStore = appearanceStore
+        self.parser = parser
     }
 }
 
@@ -46,8 +49,8 @@ extension AppCoordinator: Coordinator {
 
 private extension AppCoordinator {
     func showDetail(for news: News) {
-        guard let url = news.webURL else { return }
-        navigationController.pushViewController(NewsDetailController(url: url), animated: true)
+        let detail = NewsDetailBuilder(news: news, service: service, imageLoader: imageLoader, parser: parser).controller
+        navigationController.pushViewController(detail, animated: true)
     }
     
     func bind() {

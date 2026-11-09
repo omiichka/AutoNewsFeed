@@ -4,7 +4,7 @@
 import Combine
 import Core
 
-private typealias Result = Task<Void, Never>
+private typealias LoadingTask = Task<Void, Never>
 
 private enum Constants {
     static let firstPage = 1
@@ -22,8 +22,8 @@ final class NewsFeedViewModel {
     
     private let route: PassthroughSubject<News, Never>
     
-    private var loadTask: Result?
-    private var imageTasks: [News: Result] = [:]
+    private var loadTask: LoadingTask?
+    private var imageTasks: [News: LoadingTask] = [:]
     
     init(
         service: any NewsFetching,

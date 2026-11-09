@@ -1,7 +1,6 @@
 // ViewAdapter.swift
 // By Artem Golovanev
 
-import Combine
 import UIKit
 
 @MainActor

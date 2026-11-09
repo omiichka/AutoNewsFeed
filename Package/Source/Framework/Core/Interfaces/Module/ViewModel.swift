@@ -1,7 +1,7 @@
 // ViewModel.swift
 // By Artem Golovanev
 
-import Combine
+import Foundation
 
 @MainActor
 public protocol ViewModel: Observable {

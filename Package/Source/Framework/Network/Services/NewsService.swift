@@ -28,6 +28,10 @@ public struct NewsService: NewsFetching {
     public func fetchNews(page: Int, count: Int) async throws -> NewsPage {
         try await fetch(.news(page: page, count: count))
     }
+
+    public func fetchArticle(path: String) async throws -> News {
+        try await fetch(.article(path: path))
+    }
 }
 
 private extension NewsService {
