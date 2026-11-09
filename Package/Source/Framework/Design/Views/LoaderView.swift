@@ -27,11 +27,11 @@ extension LoaderView: ContentCell {
 private extension LoaderView {
     func setupUI() {
         activityView.hidesWhenStopped = true
+        activityView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(activityView)
     }
 
     func layout() {
-        activityView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(activityView)
         NSLayoutConstraint.activate([
             activityView.centerXAnchor.constraint(equalTo: centerXAnchor),
             activityView.centerYAnchor.constraint(equalTo: centerYAnchor)

@@ -9,13 +9,13 @@ import UIKit
 public final class NewsFeedBuilder: Observable {
     public let subject = PassthroughSubject<News, Never>()
     
-    private let service: any NewsServiceProtocol
-    private let imageLoader: any ImageLoaderProtocol
+    private let service: any NewsFetching
+    private let imageLoader: any ImageLoading
     private let appearanceStore: AppearanceStore
 
     public init(
-        service: any NewsServiceProtocol,
-        imageLoader: any ImageLoaderProtocol,
+        service: any NewsFetching,
+        imageLoader: any ImageLoading,
         appearanceStore: AppearanceStore
     ) {
         self.service = service

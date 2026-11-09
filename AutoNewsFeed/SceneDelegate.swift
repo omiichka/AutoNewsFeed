@@ -6,6 +6,10 @@ import Core
 import Design
 import UIKit
 
+private enum Constants {
+    static let duration: TimeInterval = 0.25
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -29,10 +33,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 private extension SceneDelegate {
     func bindAppearance(to window: UIWindow) {
-        appearanceStore.publisher
-            .sink { [weak window] appearance in
-                guard let window else { return }
-                UIView.transition(with: window, duration: 0.25, options: .curveEaseInOut) {
+        appearanceStore
+            .publisher
+            .sink { appearance in
+                UIView.transition(
+                    with: window,
+                    duration: Constants.duration,
+                    options: .curveEaseInOut
+                ) {
                     window.overrideUserInterfaceStyle = appearance.style
                 }
             }

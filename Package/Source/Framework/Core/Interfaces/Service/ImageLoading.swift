@@ -1,8 +1,8 @@
-// ImageLoaderProtocol.swift
+// ImageLoading.swift
 // By Artem Golovanev
 
 import UIKit
 
-public protocol ImageLoaderProtocol: Buildable, Sendable {
+public protocol ImageLoading: Buildable, Sendable {
     func image(for url: URL) async throws -> UIImage
 }

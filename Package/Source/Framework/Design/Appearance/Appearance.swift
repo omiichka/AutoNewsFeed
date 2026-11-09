@@ -19,7 +19,7 @@ public enum Appearance: String, CaseIterable {
     
     public var image: UIImage? {
         switch self {
-            case .system: UI.Icon.circle.image
+            case .system: UI.Icon.gear.image
             case .light: UI.Icon.sun.image
             case .dark: UI.Icon.moon.image
         }

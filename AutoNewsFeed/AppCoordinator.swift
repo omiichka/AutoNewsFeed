@@ -10,8 +10,8 @@ import UIKit
 final class AppCoordinator {
     let navigationController: UINavigationController
 
-    private let service: any NewsServiceProtocol
-    private let imageLoader: any ImageLoaderProtocol
+    private let service: any NewsFetching
+    private let imageLoader: any ImageLoading
     private let appearanceStore: AppearanceStore
     private var bag = Set<AnyCancellable>()
     
@@ -25,8 +25,8 @@ final class AppCoordinator {
 
     init(
         navigationController: UINavigationController = .init(),
-        service: any NewsServiceProtocol,
-        imageLoader: any ImageLoaderProtocol,
+        service: any NewsFetching,
+        imageLoader: any ImageLoading,
         appearanceStore: AppearanceStore
     ) {
         self.navigationController = navigationController

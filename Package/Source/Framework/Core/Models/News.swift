@@ -3,10 +3,10 @@
 
 import Foundation
 
-public struct News: Decodable, Identifiable, Hashable, Sendable {
+public struct News: Decodable, Hashable, Sendable {
     public let id: Int
     public let title: String
-    public let category: String
+    public let summary: String?
     public let publishedAt: Date
     public let imageURL: URL?
     public let webURL: URL?
@@ -14,7 +14,7 @@ public struct News: Decodable, Identifiable, Hashable, Sendable {
     enum CodingKeys: String, CodingKey {
         case id
         case title
-        case category = "categoryType"
+        case summary = "description"
         case publishedAt = "publishedDate"
         case imageURL = "titleImageUrl"
         case webURL = "fullUrl"

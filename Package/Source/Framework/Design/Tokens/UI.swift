@@ -22,11 +22,11 @@ public extension UI {
 
 public extension UI {
     enum Icon {
-        case circle
+        case gear
         case sun
         case moon
         case newspaper
-        case warning
+        case nosign
         
         public var image: UIImage? {
             UIImage(systemName: self.name)
@@ -37,26 +37,24 @@ public extension UI {
 private extension UI.Icon {
     var name: String {
         switch self {
-            case .circle:
-                "circle.lefthalf.filled"
+            case .gear:
+                "gear"
             case .sun:
                 "sun.max"
             case .moon:
                 "moon"
             case .newspaper:
                 "newspaper"
-            case .warning:
-                "exclamationmark.triangle"
+            case .nosign:
+                "nosign"
         }
     }
 }
 
 public extension UI {
     enum Typography {
-        case largeTitle
         case headline
         case subheadline
-        case footnote
         case caption
         
         public func font(compatibleWith: UITraitCollection? = nil) -> UIFont {
@@ -71,14 +69,10 @@ public extension UI {
 extension UI.Typography {
     private var style: UIFont.TextStyle {
         switch self {
-            case .largeTitle:
-                    .largeTitle
             case .headline:
                     .headline
             case .subheadline:
                     .subheadline
-            case .footnote:
-                    .footnote
             case .caption:
                     .caption1
         }
@@ -88,44 +82,23 @@ extension UI.Typography {
 public extension UI {
     enum Color {
         case background
-        case groupedBackground
         case cardBackground
         case imageBackground
-        case clear
-        case accent
         case secondaryText
         case placeholder
-        case overlayText
-        case overlaySecondaryText
-        case gradientStart
-        case gradientEnd
 
         public var color: UIColor {
             switch self {
                 case .background:
-                    .systemBackground
-                case .groupedBackground:
                     .systemGroupedBackground
                 case .cardBackground:
                     .secondarySystemGroupedBackground
                 case .imageBackground:
                     .tertiarySystemFill
-                case .clear:
-                    .clear
-                case .accent:
-                    .tintColor
                 case .secondaryText:
                     .secondaryLabel
                 case .placeholder:
                     .tertiaryLabel
-                case .overlayText:
-                    .white
-                case .overlaySecondaryText:
-                    .white.withAlphaComponent(0.8)
-                case .gradientStart:
-                    .black.withAlphaComponent(0)
-                case .gradientEnd:
-                    .black.withAlphaComponent(0.75)
             }
         }
     }
